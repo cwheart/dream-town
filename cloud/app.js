@@ -21,7 +21,7 @@ app.get('/payment/:channel', function(req, res) {
 app.get('/payment', function(req, res) {
   var order = new Order();
   order.amount = 10;
-  order.save();
+  order.save({amount: 10});
   res.send('Payment Callback');
 });
 
