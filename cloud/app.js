@@ -2,6 +2,8 @@
 var express = require('express');
 var app = express();
 
+var Order = AV.Object.extend("Order");
+
 // App 全局配置
 app.set('views','cloud/views');   // 设置模板目录
 app.set('view engine', 'ejs');    // 设置 template 引擎
@@ -17,6 +19,9 @@ app.get('/payment/:channel', function(req, res) {
 });
 
 app.get('/payment', function(req, res) {
+  var order = new Order();
+  order.amount = 10;
+  order.save();
   res.send('Payment Callback');
 });
 
