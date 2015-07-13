@@ -16,5 +16,9 @@ app.get('/payment/:channel', function(req, res) {
   res.send('Payment Callback');
 });
 
+app.get('/payment', function(req, res) {
+  res.send('Payment Callback');
+});
+
 // 最后，必须有这行代码来使 express 响应 HTTP 请求
 app.listen();
